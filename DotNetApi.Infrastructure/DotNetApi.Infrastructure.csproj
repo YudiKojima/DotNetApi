@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\DotNetApi.Domain.csproj" />
+    <ProjectReference Include="..\DotNetApi.Domain\DotNetApi.Domain.csproj" />
   </ItemGroup>
 
 </Project>
