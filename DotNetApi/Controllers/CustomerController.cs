@@ -1,5 +1,6 @@
 ﻿using DotNetApi.Application.Model.Customers;
 using DotNetApi.Domain.Customers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetApi.Controllers
@@ -10,12 +11,14 @@ namespace DotNetApi.Controllers
     {
         private readonly ICustomerRepository customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(customerRepository.Get());
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post(CustomerDto dto)
         {
